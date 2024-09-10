@@ -21,10 +21,10 @@ export function createServerClient(cookieStore?: ReadonlyRequestCookies) {
     const authCookie = cookieStore.get("pb_auth");
 
     if (authCookie) {
-      client.authStore.loadFromCookie(`${authCookie.name}=${authCookie.value}`);
+      client.authStore.save(`${authCookie.name}=${authCookie.value}`);
+
     }
   }
-
   return client;
 }
 
